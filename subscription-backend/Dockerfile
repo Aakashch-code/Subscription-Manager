@@ -1,40 +1,32 @@
-FROM ubuntu:latest
-LABEL authors="aakas"
-
-ENTRYPOINT ["top", "-b"]
-
 # ---- Stage 1: Build ----
-# Use a Java 17 image that includes Maven
-FROM eclipse-temurin:17-jdk-jammy as builder
+# Use a standard Maven image (which has Maven pre-installed)
+FROM maven:3.9.6-eclipse-temurin-17-jammy as builder
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the Maven wrapper and pom.xml
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+# Copy the pom.xml file first
+COPY pom.xml .
 
-# Download dependencies (this speeds up future builds)
-RUN ./mvnw dependency:go-offline
+# Download all dependencies
+RUN mvn dependency:go-offline
 
-# Copy the rest of your source code
+# Copy all your source code
 COPY src src
 
-# Build the application and create the .jar file
-RUN ./mvnw clean package -DskipTests
+# Build the application and create the .jar
+RUN mvn clean package -DskipTests
 
 # ---- Stage 2: Run ----
 # Use a minimal Java 17 runtime-only image
 FROM eclipse-temurin:17-jre-jammy
-
-# Set a new working directory
 WORKDIR /app
 
-# !! IMPORTANT !!
-
+# Copy the .jar file from the 'builder' stage
+# This is the filename you confirmed earlier, so it is correct.
 COPY --from=builder /app/target/subscription-backend-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port 8080 (the default for Spring Boot)
+# Expose port 8080 (default for Spring Boot)
 EXPOSE 8080
 
 # Command to run the application
