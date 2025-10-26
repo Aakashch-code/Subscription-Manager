@@ -1,0 +1,47 @@
+# =================================================
+# IntelliJ / JetBrains
+# =================================================
+# Covers .idea/ workspace files and .iml module files
+.idea/
+*.iml
+modules.xml
+misc.xml
+workspace.xml
+
+# =================================================
+# Spring Boot / Maven
+# =================================================
+# Compiled class files and build output
+target/
+.mvn/
+
+# Log files
+*.log
+logs/
+
+# VERY IMPORTANT: Uncomment this line if your properties
+# file contains passwords or API keys!
+# application.properties
+# application-*.properties
+
+# =================================================
+# React / Node.js
+# =================================================
+# All 3rd-party libraries
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VERY IMPORTANT: Environment files with secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
