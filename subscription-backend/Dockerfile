@@ -1,6 +1,6 @@
 # ---- Stage 1: Build ----
 # Use a standard Maven image (which has Maven pre-installed)
-FROM maven:3.9.6-eclipse-temurin-17-jammy as builder
+FROM maven:3.9.6-eclipse-temurin-17 as builder
 
 # Set the working directory
 WORKDIR /app
