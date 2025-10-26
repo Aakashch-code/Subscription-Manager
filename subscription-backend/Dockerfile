@@ -1,6 +1,6 @@
 # ---- Stage 1: Build ----
-# Use a standard Maven image (which has Maven pre-installed)
-FROM maven:3.9.6-eclipse-temurin-17 as builder
+# Use a Maven builder image that has Java 25
+FROM maven:3.9.6-eclipse-temurin-25 as builder
 
 # Set the working directory
 WORKDIR /app
@@ -18,12 +18,11 @@ COPY src src
 RUN mvn clean package -DskipTests
 
 # ---- Stage 2: Run ----
-# Use a minimal Java 17 runtime-only image
-FROM eclipse-temurin:17-jre-jammy
+# Use a Java 25 runtime image (your suggestion is correct here)
+FROM eclipse-temurin:25-jre-jammy
 WORKDIR /app
 
 # Copy the .jar file from the 'builder' stage
-# This is the filename you confirmed earlier, so it is correct.
 COPY --from=builder /app/target/subscription-backend-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port 8080 (default for Spring Boot)
