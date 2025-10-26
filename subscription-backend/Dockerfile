@@ -1,6 +1,6 @@
 # ---- Stage 1: Build ----
-# Use a Maven builder image that has Java 25
-FROM maven:3.9.6-eclipse-temurin-25 as builder
+# Use a Maven builder image that has Java 21 (LTS)
+FROM maven:3.9.6-eclipse-temurin-21 as builder
 
 # Set the working directory
 WORKDIR /app
@@ -18,8 +18,8 @@ COPY src src
 RUN mvn clean package -DskipTests
 
 # ---- Stage 2: Run ----
-# Use a Java 25 runtime image (your suggestion is correct here)
-FROM eclipse-temurin:25-jre-jammy
+# Use a minimal Java 21 (LTS) runtime-only image
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 # Copy the .jar file from the 'builder' stage
