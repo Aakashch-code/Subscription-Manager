@@ -1,44 +1,38 @@
 # Subscription Manager
 
-A modern, responsive frontend application built with **React** and **Tailwind CSS** featuring a striking **Glassmorphism** design. It provides a comprehensive dashboard to track, manage, and calculate your recurring service expenses.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-brightgreen?style=flat-square)](https://subscriptionmanagerbyak.netlify.app/)
 
-## ✨ Features
+A full-stack application designed to track and manage recurring subscriptions. It features a responsive, glassmorphic UI built with React and Tailwind CSS, and is powered by a Spring Boot and PostgreSQL backend.
 
-* **Financial Overview:** Calculates and displays total **Monthly** and **Yearly** spending by normalizing all billing cycles (Monthly, Yearly, Weekly).
-* **Full CRUD Functionality:** Seamlessly **Create, Read, Update, and Delete** subscriptions via a RESTful API.
-* **Intuitive UI:** Uses a card-based layout for clear display of subscriptions and a centralized modal for management.
-* **Dynamic Data Handling:** Built with React Hooks (`useState`, `useEffect`) for state management and API interactions.
-* **Error & Loading States:** Clear visual feedback for network operations and errors.
+---
+
+## 🚀 Features
+
+* **Financial Dashboard:** Automatically calculates and displays total monthly and yearly expenditures by normalizing all billing cycles (e.g., weekly, monthly, annual).
+* **Full CRUD Operations:** Enables users to create, read, update, and delete subscription entries via a RESTful API.
+* **Responsive UI/UX:** A clean, card-based layout with a glassmorphism theme. All actions are handled through an intuitive modal interface.
+* **State Management:** Utilizes React Hooks (`useState`, `useEffect`) for efficient client-side state and API data handling.
+* **User Feedback:** Provides clear loading spinners and error alerts for all asynchronous network operations.
+
+---
 
 ## 🛠️ Tech Stack
 
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Frontend** | React, Tailwind CSS | UI and state management. |
-| **Icons** | Lucide Icons | Clean, modern icon set. |
-| **Backend** | Spring Boot, MySQL | Robust RESTful API and persistence. |
-| **Styling** | Custom CSS | Implements the Glassmorphism theme. |
+| **Frontend** | React, Tailwind CSS | UI, state management, and styling. |
+| **Icons** | Lucide Icons | Clean, lightweight icon set. |
+| **Backend** | Spring Boot, Java | Robust RESTful API and business logic. |
+| **Database** | PostgreSQL | Relational database for data persistence. |
 
-***
+---
 
-## 🚀 Getting Started
+## 🌐 Localization & Currency
 
-### Prerequisites
+The application UI is currently configured to display the **Indian Rupee (₹)** symbol. This is a cosmetic setting in the React component and does not affect the backend, which stores amounts as a generic numerical type (e.g., `BigDecimal`). The symbol can be easily modified within the `App.js` component.
 
-You will need the following installed:
+---
 
-* **Node.js** (LTS version) and **npm** or **yarn**
-* **Java** (JDK 17+) and **Maven** or **Gradle** (for the backend)
-* **PostgreSQL 18**
-***
+## 👨‍💻 Author
 
-
-
-### Note on Currency
-
-The application currently displays amounts using the **Indian Rupee (₹)** symbol but is designed to handle generic numerical amounts (`Double` or `BigDecimal` in your Spring Boot/MySQL model). You can easily change the currency symbol within the `SubscriptionTracker.jsx` component.
-
-## 👨‍💻 Developer
-
-Developed by **Aakash Chauhan**  
-
+Developed by **Aakash Chauhan**
