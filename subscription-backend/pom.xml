@@ -8,6 +8,7 @@
         <version>3.5.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>org.ak</groupId>
     <artifactId>subscription-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
