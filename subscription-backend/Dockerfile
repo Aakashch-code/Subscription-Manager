@@ -19,7 +19,7 @@ RUN mvn clean package -DskipTests
 
 # ---- Stage 2: Run ----
 # Use a minimal Java 17 runtime-only image
-FROM eclipse-temurin:25-jre-jammy
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
 # Copy the .jar file from the 'builder' stage
