@@ -11,14 +11,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/subscriptions")
-@CrossOrigin(origins = "https://frolicking-piroshki-2c5360.netlify.app/")
+@CrossOrigin(origins = "https://subscriptionmanagerbyak.netlify.app/")
 public class SubscriptionController {
 
     @Autowired
     private SubscriptionService subscriptionService;
 
     @GetMapping
-    public List<Subscriptions> getAllSubscriptions() {
+    public List<Subscriptions> getAsllSubscription() {
         return subscriptionService.getAllSubscriptions();
     }
 
