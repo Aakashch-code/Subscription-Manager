@@ -17,7 +17,7 @@ public class SubscriptionController {
     private SubscriptionService subscriptionService;
 
     @GetMapping
-    public List<Subscriptions> getAsllSubscription() {
+    public List<Subscriptions> getAllSubscription() {
         return subscriptionService.getAllSubscriptions();
     }
 
