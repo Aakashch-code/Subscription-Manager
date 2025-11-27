@@ -12,10 +12,10 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Applies CORS to all endpoints
-                        .allowedOrigins("https://frolicking-piroshki-2c5360.netlify.app") // Your Netlify URL
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
-                        .allowedHeaders("*") // Allow all headers
+                registry.addMapping("/**")
+                        .allowedOrigins("https://subscriptionmanagerbyak.netlify.app/")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
                         .allowCredentials(true);
             }
         };
